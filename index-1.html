@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="LensCraft Photography - Wedding, Pre-Wedding, Events and Portrait Photography in Nashik.">
+<title>LensCraft Photography | Nashik</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#080808;color:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+img{max-width:100%}
+
+.navbar{position:fixed;top:0;left:0;width:100%;height:68px;z-index:9999;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:rgba(0,0,0,.7);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{font-size:21px;font-weight:800;letter-spacing:2px}.logo span{color:#d7aa61}
+.desktop-menu{display:flex;gap:25px}.desktop-menu a{font-size:14px;color:#ddd;transition:.3s}.desktop-menu a:hover{color:#d7aa61}
+
+.hero{min-height:100svh;padding:110px 20px 80px;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.84)),url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=90");background-size:cover;background-position:center}
+.hero-content{max-width:900px;animation:fadeUp 1s ease}
+.hero-tag{color:#d7aa61;font-size:11px;font-weight:bold;letter-spacing:4px}
+.hero h1{margin:22px 0;font-size:clamp(48px,9vw,95px);line-height:.96;letter-spacing:-4px}
+.hero p{color:#ddd;font-size:17px;line-height:1.8;margin-bottom:30px}
+.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;min-width:175px;padding:15px 25px;border-radius:40px;text-align:center;font-weight:bold;transition:.3s;cursor:pointer}
+.gold{background:#d7aa61;color:#111}.outline{border:1px solid #fff;color:#fff}.btn:hover{transform:translateY(-3px)}
+
+section{padding:95px 7%}.section-title{text-align:center;margin-bottom:45px}.section-title span{color:#d7aa61;font-size:11px;font-weight:bold;letter-spacing:3px}.section-title h2{font-size:43px;margin:10px 0}.section-title p{color:#888}
+
+.about{max-width:850px;margin:auto;text-align:center}.about p{color:#bbb;font-size:17px;line-height:1.9}
+
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.service-card{background:#121212;border:1px solid #242424;padding:35px 20px;border-radius:20px;text-align:center;transition:.35s}.service-card:hover{transform:translateY(-8px);border-color:#d7aa61}.service-icon{font-size:42px}.service-card h3{color:#d7aa61;margin:15px 0 8px}.service-card p{color:#888;font-size:14px}
+
+.gallery{columns:3 250px;column-gap:14px}.gallery-item{break-inside:avoid;margin-bottom:14px;border-radius:16px;overflow:hidden;cursor:pointer}.gallery-item img{display:block;width:100%;transition:.5s}.gallery-item:hover img{transform:scale(1.06)}
+
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:20000;display:none;align-items:center;justify-content:center;padding:20px}.lightbox img{max-width:95%;max-height:90vh;border-radius:10px}.close-lightbox{position:absolute;top:18px;right:25px;font-size:40px;cursor:pointer}
+
+.video-box{max-width:1000px;margin:auto;border-radius:20px;overflow:hidden;background:#111}.video-box iframe{width:100%;height:550px;border:0;display:block}
+
+.package-grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.package{background:#121212;border:1px solid #292929;border-radius:20px;padding:35px 25px;text-align:center}.package.featured{border-color:#d7aa61;transform:scale(1.03)}.package h3{color:#d7aa61}.price{font-size:34px;font-weight:bold;margin:18px 0}.package p{color:#999;line-height:2}
+
+.review-grid{max-width:1050px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:#121212;border:1px solid #242424;border-radius:18px;padding:28px}.stars{color:#d7aa61;letter-spacing:3px;margin-bottom:15px}.review p{color:#aaa;line-height:1.7}.review h4{margin-top:18px}
+
+.availability{max-width:750px;margin:auto;text-align:center}.date-input{padding:15px;width:100%;max-width:350px;background:#151515;color:white;border:1px solid #333;border-radius:10px;font-size:16px}.calendar-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}.date-btn{padding:12px 18px;background:#151515;border:1px solid #333;color:white;border-radius:10px;cursor:pointer}.date-btn:hover{border-color:#d7aa61}.status{margin-top:20px;padding:15px;border-radius:12px;background:#151515;color:#aaa}
+
+.booking-section{background:#0e0e0e}.booking-box{max-width:650px;margin:auto}.booking-form{display:flex;flex-direction:column;gap:14px}.booking-form input,.booking-form select,.booking-form textarea{width:100%;padding:16px;background:#151515;color:white;border:1px solid #303030;border-radius:12px;outline:none;font-size:16px}.booking-form input:focus,.booking-form select:focus,.booking-form textarea:focus{border-color:#d7aa61}.booking-form button{padding:17px;border:0;border-radius:35px;background:#d7aa61;color:#111;font-weight:bold;font-size:16px;cursor:pointer}
+.payment{max-width:650px;margin:40px auto 0;text-align:center;padding:30px;background:#151515;border-radius:18px;border:1px solid #292929}.payment h3{margin-bottom:10px}.payment p{color:#888;margin-bottom:20px}
+
+.contact{text-align:center}.contact-info{display:flex;justify-content:center;gap:35px;flex-wrap:wrap;margin:25px 0}.contact-info div{color:#aaa}.map{margin-top:40px;border-radius:18px;overflow:hidden}.map iframe{width:100%;height:300px;border:0;display:block}
+
+footer{padding:30px 20px 90px;text-align:center;color:#666;border-top:1px solid #222}
+.mobile-nav{display:none}.whatsapp{position:fixed;right:18px;bottom:20px;width:57px;height:57px;border-radius:50%;background:#25D366;display:flex;justify-content:center;align-items:center;font-size:25px;z-index:15000;box-shadow:0 6px 25px rgba(0,0,0,.5)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+.navbar{height:62px;padding:0 18px}.logo{font-size:17px}.desktop-menu{display:none}
+.hero{padding:95px 18px 90px}.hero-tag{font-size:9px;letter-spacing:2px}.hero h1{font-size:clamp(44px,14vw,64px);letter-spacing:-2px}.hero p{font-size:15px}
+.buttons{flex-direction:column;align-items:center}.btn{width:100%;max-width:310px}
+section{padding:65px 18px}.section-title{margin-bottom:32px}.section-title h2{font-size:32px}.about p{font-size:15px}
+.service-grid{grid-template-columns:1fr 1fr;gap:10px}.service-card{padding:25px 12px;border-radius:15px}.service-icon{font-size:32px}.service-card h3{font-size:16px}.service-card p{font-size:12px}
+.gallery{columns:2 130px;column-gap:8px}.gallery-item{margin-bottom:8px;border-radius:10px}
+.video-box iframe{height:230px}.package-grid{grid-template-columns:1fr}.package.featured{transform:none}.review-grid{grid-template-columns:1fr}
+.mobile-nav{position:fixed;bottom:0;left:0;width:100%;height:65px;display:flex;justify-content:space-around;align-items:center;background:rgba(10,10,10,.96);backdrop-filter:blur(15px);border-top:1px solid #292929;z-index:14000}
+.mobile-nav a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#aaa}.mobile-nav a span{font-size:19px}.mobile-nav .book{color:#d7aa61}
+.whatsapp{bottom:82px;width:53px;height:53px}footer{padding-bottom:90px}
+}
+@media(max-width:380px){.service-grid{grid-template-columns:1fr}.gallery{columns:1}.gallery-item{margin-bottom:10px}}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">LENS<span>CRAFT</span></div>
+  <div class="desktop-menu">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+    <a href="#gallery">Gallery</a><a href="#video">Films</a><a href="#packages">Packages</a><a href="#booking">Book</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">WEDDING • EVENTS • PORTRAITS</div>
+    <h1>Stories<br>Captured Forever.</h1>
+    <p>Professional Photography &amp; Cinematic Films<br>Nashik, Maharashtra</p>
+    <div class="buttons">
+      <a href="#gallery" class="btn gold">View Portfolio</a>
+      <a href="#booking" class="btn outline">Book a Shoot</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-title"><span>ABOUT US</span><h2>Memories That Last</h2><p>More than photographs — emotions.</p></div>
+  <div class="about"><p>Welcome to LensCraft Photography. We capture weddings, pre-weddings, events and portraits with a cinematic and emotional style. Every photograph is created to tell your story and preserve your most beautiful moments forever.</p></div>
+</section>
+
+<section id="services">
+  <div class="section-title"><span>OUR SERVICES</span><h2>What We Capture</h2><p>Professional photography for every special moment.</p></div>
+  <div class="service-grid">
+    <div class="service-card"><div class="service-icon">💍</div><h3>Wedding</h3><p>Complete wedding photography and cinematic films.</p></div>
+    <div class="service-card"><div class="service-icon">❤️</div><h3>Pre-Wedding</h3><p>Romantic couple shoots with cinematic storytelling.</p></div>
+    <div class="service-card"><div class="service-icon">🎉</div><h3>Events</h3><p>Birthdays, engagements and special events.</p></div>
+    <div class="service-card"><div class="service-icon">📸</div><h3>Portraits</h3><p>Professional portraits and personal branding.</p></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="section-title"><span>PORTFOLIO</span><h2>Our Gallery</h2><p>Tap any photo to view it.</p></div>
+  <div class="gallery">
+    <div class="gallery-item" onclick="openLightbox(this)"><img loading="lazy" alt="Wedding photography" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=90"></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img loading="lazy" alt="Wedding couple" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=90"></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img loading="lazy" alt="Wedding ceremony" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=90"></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img loading="lazy" alt="Wedding portrait" src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1000&q=90"></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img loading="lazy" alt="Couple portrait" src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=1000&q=90"></div>
+    <div class="gallery-item" onclick="openLightbox(this)"><img loading="lazy" alt="Wedding photography" src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=90"></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <div class="close-lightbox" onclick="closeLightbox()">×</div>
+  <img id="lightboxImage" alt="Full size portfolio image">
+</div>
+
+<section id="video">
+  <div class="section-title"><span>CINEMATIC FILMS</span><h2>Watch Our Stories</h2><p>Replace the demo video with the photographer's reel.</p></div>
+  <div class="video-box"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Photography Film" allowfullscreen></iframe></div>
+</section>
+
+<section id="packages">
+  <div class="section-title"><span>PACKAGES</span><h2>Choose Your Package</h2><p>Flexible options for your special day.</p></div>
+  <div class="package-grid">
+    <div class="package"><h3>Basic</h3><div class="price">₹9,999</div><p>Wedding Photography<br>1 Photographer<br>300+ Edited Photos</p><br><a href="#booking" class="btn gold">Enquire</a></div>
+    <div class="package featured"><h3>Premium</h3><div class="price">₹19,999</div><p>Wedding Photography<br>2 Photographers<br>Cinematic Video<br>600+ Edited Photos</p><br><a href="#booking" class="btn gold">Enquire</a></div>
+    <div class="package"><h3>Custom</h3><div class="price">Let's Talk</div><p>Custom package based on your event and requirements.</p><br><a href="#booking" class="btn gold">Contact</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><span>TESTIMONIALS</span><h2>Happy Clients</h2><p>Replace these demo reviews with real client reviews.</p></div>
+  <div class="review-grid">
+    <div class="review"><div class="stars">★★★★★</div><p>Absolutely loved the photos. Every moment was captured beautifully.</p><h4>— Rahul &amp; Priya</h4></div>
+    <div class="review"><div class="stars">★★★★★</div><p>Professional team and amazing cinematic wedding video.</p><h4>— Akash &amp; Sneha</h4></div>
+    <div class="review"><div class="stars">★★★★★</div><p>Very creative photography. Highly recommended.</p><h4>— Neha</h4></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><span>AVAILABILITY</span><h2>Check Your Date</h2><p>Select a date to check availability.</p></div>
+  <div class="availability">
+    <input class="date-input" type="date" id="checkDate" aria-label="Check shoot date">
+    <div class="calendar-row"><button class="date-btn" onclick="checkAvailability()">Check Availability</button></div>
+    <div class="status" id="availabilityStatus">Choose your date above.</div>
+  </div>
+</section>
+
+<section class="booking-section" id="booking">
+  <div class="section-title"><span>BOOKING</span><h2>Book Your Shoot</h2><p>Fill the form and send your request directly on WhatsApp.</p></div>
+  <div class="booking-box">
+    <form class="booking-form" onsubmit="sendBooking(event)">
+      <input type="text" id="name" placeholder="Full Name" autocomplete="name" required>
+      <input type="tel" id="phone" placeholder="Phone Number" autocomplete="tel" required>
+      <input type="email" id="email" placeholder="Email Address" autocomplete="email">
+      <select id="service" required>
+        <option value="">Select Shoot Type</option>
+        <option>Wedding Photography</option><option>Pre-Wedding Shoot</option>
+        <option>Birthday / Event</option><option>Portrait Shoot</option>
+        <option>Cinematic Video</option><option>Other</option>
+      </select>
+      <input type="date" id="date" required>
+      <input type="text" id="location" placeholder="Shoot Location" required>
+      <textarea id="message" rows="5" placeholder="Tell us about your event..."></textarea>
+      <button type="submit">📲 Send Booking Request</button>
+    </form>
+    <div class="payment">
+      <h3>💳 Advance Booking</h3>
+      <p>Pay your advance using UPI after confirming your booking.</p>
+      <a href="upi://pay?pa=photographer@upi&amp;pn=LensCraft%20Photography&amp;cu=INR" class="btn gold">Pay Advance via UPI</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="section-title"><span>CONTACT</span><h2>Let's Create Memories</h2><p>Ready to capture your story?</p></div>
+  <div class="contact-info">
+    <div>📍 Nashik, Maharashtra</div><div>📞 +91 98765 43210</div><div>✉️ hello@lenscraft.com</div>
+  </div>
+  <div class="buttons">
+    <a href="https://instagram.com/" target="_blank" rel="noopener" class="btn outline">📸 Instagram</a>
+    <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn gold">💬 WhatsApp Us</a>
+  </div>
+  <div class="map"><iframe src="https://www.google.com/maps?q=Nashik%20Maharashtra&amp;output=embed" loading="lazy" title="Nashik map"></iframe></div>
+</section>
+
+<footer>
+  <div style="color:#d7aa61;font-size:20px;font-weight:bold;letter-spacing:2px;margin-bottom:10px">LENSCRAFT</div>
+  <p>Photography • Cinematic Films • Memories</p><br>
+  <p>© 2026 LensCraft Photography. All Rights Reserved.</p>
+</footer>
+
+<div class="mobile-nav">
+  <a href="#home"><span>⌂</span>Home</a>
+  <a href="#gallery"><span>📸</span>Gallery</a>
+  <a href="#packages"><span>💰</span>Packages</a>
+  <a href="#booking" class="book"><span>📅</span>Book</a>
+</div>
+
+<a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="whatsapp" aria-label="WhatsApp">💬</a>
+
+<script>
+const bookedDates = ["2026-09-15","2026-10-02","2026-10-18"];
+
+function openLightbox(element){
+  document.getElementById("lightboxImage").src = element.querySelector("img").src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+function closeLightbox(){document.getElementById("lightbox").style.display = "none";}
+document.getElementById("lightbox").addEventListener("click",e=>{if(e.target===e.currentTarget)closeLightbox();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLightbox();});
+
+function checkAvailability(){
+  const date=document.getElementById("checkDate").value;
+  const status=document.getElementById("availabilityStatus");
+  if(!date){status.textContent="⚠️ Please select a date first.";return;}
+  if(bookedDates.includes(date)){
+    status.textContent="❌ Sorry! This date is already booked.";
+    status.style.color="#ff7777";
+  }else{
+    status.textContent="✅ Great! This date is currently available.";
+    status.style.color="#8ee28e";
+  }
+}
+
+function sendBooking(event){
+  event.preventDefault();
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const service=document.getElementById("service").value;
+  const date=document.getElementById("date").value;
+  const location=document.getElementById("location").value.trim();
+  const message=document.getElementById("message").value.trim();
+
+  if(bookedDates.includes(date)){
+    alert("Sorry! This date is already booked. Please choose another date.");
+    return;
+  }
+
+  const whatsappNumber="919876543210";
+  const bookingMessage=`📸 NEW SHOOT BOOKING
+
+━━━━━━━━━━━━━━━━━━
+
+👤 Name:
+${name}
+
+📱 Phone:
+${phone}
+
+📧 Email:
+${email || "Not provided"}
+
+📸 Shoot Type:
+${service}
+
+📅 Shoot Date:
+${date}
+
+📍 Shoot Location:
+${location}
+
+📝 Message:
+${message || "No additional message"}
+
+━━━━━━━━━━━━━━━━━━
+
+Sent from LensCraft Photography Website`;
+
+  window.open("https://wa.me/"+whatsappNumber+"?text="+encodeURIComponent(bookingMessage),"_blank");
+}
+
+const today=new Date().toISOString().split("T")[0];
+document.getElementById("date").min=today;
+document.getElementById("checkDate").min=today;
+
+window.addEventListener("scroll",()=>{
+  const navbar=document.querySelector(".navbar");
+  navbar.style.background=window.scrollY>40?"rgba(0,0,0,.92)":"rgba(0,0,0,.7)";
+});
+</script>
+</body>
+</html>
